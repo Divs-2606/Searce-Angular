@@ -1,13 +1,19 @@
-<h1>
+<div class="address-book">
+    <h1 class="name">
     {{user.name}}
-</h1>
-<h2>
-    {{user.designation}}
-</h2>
-<div>
-    <p>{{user.address}}</p>
-</div>
-<div *ngIf="user.phone.length>0">
-    <p>Phone:</p>
-    <p *ngFor= "let item of user.phone">{{item}}</p>
-</div>
+    </h1>
+    <h2 class="designation">
+        {{user.designation}}
+    </h2>
+    <button *ngIf="isCollapsed" (click)="toggleButton()">Collapse</button>
+    <button *ngIf="!isCollapsed" (click)="toggleButton()">Expand</button>
+    <div *ngIf="isCollapsed">
+        <div>
+            <p class="address">{{user.address}}</p>
+        </div>
+        <div *ngIf="user.phone.length>0" class="phone">
+            <p>Phone:</p>
+            <p *ngFor= "let item of user.phone">{{item}}</p>
+        </div>
+        </div>
+    </div>

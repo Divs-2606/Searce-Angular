@@ -10,12 +10,17 @@ export class AddressBookComponent implements OnInit {
 
   @Input('user')
   user!: User;
+  isCollapsed : boolean=true;
   constructor() { 
     
   }
 
+  toggleButton(){
+    this.isCollapsed=!this.isCollapsed;
+  }
+
   ngOnInit(): void {
-    
+
   }
 
 }
